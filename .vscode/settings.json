@@ -1,5 +1,5 @@
 {
-   "python.linting.pylintEnabled": true,
+   "python.linting.pylintEnabled": false,
    "python.linting.enabled": true,
    "python.linting.pycodestyleEnabled": false,
    "python.linting.flake8Enabled": true,
@@ -18,9 +18,17 @@
       "**/core.Microsoft*": true,
       "**/core.mongo*": true,
       "**/core.python*": true,
-      "**/CVS": true
+      "**/CVS": true,
+      "env/**/*": true,
+      "**/db.sqlite3": true,
+      "**/*.pyc": true,
+      "**/__pycache__": true,
+      "**/env": true
    },
    "files.autoSave": "off",
    "workbench.colorTheme": "Visual Studio Dark",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "editor.defaultFormatter": "HookyQR.beautify",
+   "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+   }
 }
