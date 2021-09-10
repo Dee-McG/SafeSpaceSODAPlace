@@ -13,6 +13,7 @@ class TopicSerializer(serializers.ModelSerializer):
             'datetime',
             'voting',
         )
+        depth = 1
 
 
 class CommentSerializer(serializers.ModelSerializer):
