@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
 
 html {
@@ -7,10 +8,11 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif !important;
+    color: #0E2143;
 }
 
 a {
-    color: #000;
+    color: #0E2143;
 }
 
 .content {
@@ -19,6 +21,7 @@ a {
 
 
 /* NAVBAR */
+
 
 
 /* FOOTER */
@@ -53,3 +56,66 @@ footer a:hover {
     display: inline;
 }
 
+
+/* INDEX.HTML */
+
+.hero-container {
+    background-image: url(/media/hero-img.jpg);
+    height: calc(100vh - 56px);
+    margin-bottom: 40px;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: calc(100vh - 56px);
+    width: 100vw;
+}
+
+.hero-content {
+    z-index: 999;
+    position: relative;
+    color: #FF6600;
+    width: 100vw;
+}
+
+.inner-cont {
+    margin-top: 30vh;
+    padding: 0 10px;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5rem;
+    text-shadow:
+        0 0 21px #FF6600,
+        0 0 72px #FF6600;
+    font-weight: 300;
+}
+
+.hero-content h2 {
+    font-weight: 300;
+}
+
+.home-content h3 {
+    text-align: center;
+
+}
+
+.orange-underline {
+    border-top: 2px solid #FF6600;
+    width: 40%;
+}
+
+.content-row {
+    margin: 10px 0 50px 0;
+}
+
+.cont-img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.cont-soda-img {
+    max-width: 100%;
+}
