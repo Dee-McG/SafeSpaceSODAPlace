@@ -1,4 +1,6 @@
-/* Descussion.html styling.....Steve */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
 
 * {
     margin: 0;
@@ -6,9 +8,161 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: black;
+html {
+    height: 100%;
 }
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    color: #0E2143;
+}
+
+a {
+    color: #0E2143;
+}
+
+.content {
+    min-height: calc(100vh - 270px);
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #0E2143;
+    padding: 0;
+}
+
+.navbar-brand {
+    margin: -10px 10px 3px 10px;
+}
+
+.brand-text {
+    display:inline-block;
+}
+
+.brand-text-cont {
+    position: relative;
+    top: 15px;
+}
+
+.brand-text p {
+    font-size: 1.5rem;
+}
+
+.navbar-brand p {
+    margin: 0;
+}
+
+.navbar a {
+    color: #FFFFC2;
+}
+
+.navbar a:hover {
+    color: #FF6600;
+    text-decoration: none;
+}
+
+.navbar-nav li {
+    padding: 0 12px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #0E2143;
+    padding: 30px 30px 5px 30px;
+    color: #FFFFC2;
+    border-top: 3px solid #FF6600;
+    margin-top: 20px;
+}
+
+.footer-cols {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #FFFFC2;
+}
+
+footer a:hover {
+    color: #FF6600;
+    text-decoration: none;
+}
+
+.soda-logo-footer {
+    width: 135px;
+}
+
+.footer-socials {
+    font-size: 3rem;
+    display: inline;
+}
+
+
+/* INDEX.HTML */
+
+.hero-container {
+    background-image: url(/media/hero-img.jpg);
+    height: calc(100vh - 56px);
+    margin-bottom: 40px;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: calc(100vh - 56px);
+    width: 100vw;
+}
+
+.hero-content {
+    z-index: 999;
+    position: relative;
+    color: #FF6600;
+    width: 100vw;
+}
+
+.inner-cont {
+    margin-top: 30vh;
+    padding: 0 10px;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5rem;
+    text-shadow:
+        0 0 21px #FF6600,
+        0 0 72px #FF6600;
+    font-weight: 300;
+}
+
+.hero-content h2 {
+    font-weight: 300;
+}
+
+.home-content h3 {
+    text-align: center;
+}
+
+.orange-underline {
+    border-top: 2px solid #FF6600;
+    width: 40%;
+}
+
+.content-row {
+    margin: 10px 0 50px 0;
+}
+
+.cont-img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.cont-soda-img {
+    max-width: 100%;
+}
+
+/* DISCUSSION PAGE*/
 
 #title {
     color: white;
