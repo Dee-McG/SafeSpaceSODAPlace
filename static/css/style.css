@@ -1,0 +1,101 @@
+/* Descussion.html styling.....Steve */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+#title {
+    color: white;
+    font-size: 280%;
+    text-align: center;
+}
+
+/* Topic box */
+
+.topic-container {
+    width: 90%;
+    background-color: lightgray;
+    border: 3px solid white;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.topic-main {
+    width: 100%;
+    background-color: darkgray;
+    padding: 20px;
+}
+
+/* Topic Title */
+
+.topic {
+    color: white;
+    font-size: 150%;
+    width: 60%;
+    left: 20px;
+}
+
+.like-btn {
+    float: right;
+    padding-right: 30px
+}
+
+/* Topic description */
+
+.topic-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Comments made on the topic get displayed here */
+.comments-made {
+    border: 2px solid;
+    background-color: darkgrey;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Button to show the comment box */
+.btn {
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* Comment box, hidden until the comment button is pressed */
+
+.comment-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: lightgray;
+    border: 2px solid white;
+    text-align: center;
+}
+
+#user-comment {
+    width: 80%;
+    margin: 20px;
+}
+
+.comment-container label {
+    font-size: 1.5rem;
+}
+
+/* Second topic comment textarea */
+#user-comment2 {
+    width: 80%;
+    margin: 20px;
+}
+
+/* This class will hide the comment box until the button is pressed */
+/* Currently commented out until javascript in place */
+/* .hide {
+    display: none;
+} */
