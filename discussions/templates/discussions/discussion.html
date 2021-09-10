@@ -1,1 +1,70 @@
-Discussions
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../static/css/style.css" rel="stylesheet">
+    <title>Discussion Board</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Discussion Board</h1>
+    </header>
+    <main>
+        <div id="container">
+            <!-- First Topic board-->
+           <div class="topic-container">
+                <div class="topic-main">
+                    <span class="topic">Topic: How can we support dsylexia in the workplace?</span>
+                    <!-- <span class="like-btn">Like</span> -->
+                </div>
+                <div class="topic-content">
+                    <p>Because dyslexia affects learning, it is often considered a disability and thus protected by the ADA. Employers are not allowed to discriminate based on this person's dyslexia or learning disability.</p>
+                </div>
+                <h2>Comments:</h2>
+                <div class="comments-made">
+                    <p>Give verbal as well as written instructions (this also applies to using voicemail rather than, or as well as, written memos)</p>
+                </div>
+                <button class="btn">Comment</button>
+           </div>
+           <div class="comment-container hide">
+               <label for="user-comment">Enter your comment here:</label>
+               <br>
+               <textarea id="user-comment" name="user-comment" placeholder="Comment here...." rows="4" cols="50">
+
+               </textarea>
+               <br>
+               <button class="comment-submit btn">Submit Comment</button>
+           </div>
+           <!-- Second Topic board-->
+           <div class="topic-container">
+                <div class="topic-main">
+                    <span class="topic">Topic: How can we support a collegue with visual impairment in the workplace?</span>
+                    <!-- <span class="like-btn">Like</span> -->
+                </div>
+                <div class="topic-content">
+                    <p>The most important rule is to ask a person who is visually impaired what their preferred mode of communication is and let them know what format you can provide information in. Some people may prefer email communication as the person may use text to speech software or the person may use magnification.</p>
+                </div>
+                <h2>Comments:</h2>
+                <div id="comments-made2" class="comments-made">
+                    <p>Provide information in alternative formats</p>
+                </div>
+                <button id="comment-btn2" class="btn">Comment</button>
+            </div>
+            <!-- Second comment board-->
+            <div class="comment-container hide">
+                <label for="user-comment2">Enter your comment here:</label>
+                <br>
+                <textarea id="user-comment2" name="user-comment" placeholder="Comment here...." rows="4" cols="50">
+ 
+                </textarea>
+                <br>
+                <button id="comment-submit-button2" class="comment-submit btn">Submit Comment</button>
+            </div>
+        </div>
+    </main>
+    
+
+</body>
+</html>
