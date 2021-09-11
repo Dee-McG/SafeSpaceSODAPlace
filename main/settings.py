@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'discussions',
     'ideas',
+    'profiles',
 
     # Other
     'crispy_forms',
