@@ -2,18 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <h1 >Profile</h1>
+<div class="card" style="width: 50%; border: 0em;">
+    <div class="card-body">
+        <h1>Profile</h1>
 
-    <h2>Name: </h2>
-    <p class="main-text">{{ user_profile.name }}</p>
-    <hr>
-    <h2>Organisation: </h2>
-    <p class="main-text">{{ user_profile.organisation }}</p>
-    <hr>
-    <h2>Job Title: </h2>
-    <p class="main-text">{{ user_profile.job_title }}</p>
-
-    {% if request.user.username == user %}
-        <a href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
-    {% endif %}
+        <h3>Name: </h3>
+        <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
+        <hr>
+        <h3>Organisation: </h3>
+        <p class="main-text">{{ user_profile.organisation }}</p>
+        <hr>
+        <h3>Job Title: </h3>
+        <p class="main-text">{{ user_profile.job_title }}</p>
+        <hr>
+    </div>
+</div>
+{% if request.user.username == user %}
+<br>
+        <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
+        {% endif %}
 {% endblock %}
