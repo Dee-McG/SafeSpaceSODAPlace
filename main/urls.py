@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('discussions/', include('discussions.urls', namespace='discussions')),
     path('ideas', include('ideas.urls')),
+    path('profiles', include('profiles.urls')),
 ]
 
 
