@@ -310,3 +310,10 @@ footer a:hover {
     background-color: #FF6600;
     color: #0E2143;
 }
+
+/* Ideas page */
+@media only screen and (min-width: 800px) {
+    .ideas {
+      padding: 0 10% 0 10%;
+    }
+  }
