@@ -1,2 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+    <h1 >Profile</h1>
+
+    <h2>Name: </h2>
+    <p class="main-text">{{ user_profile.name }}</p>
+    <hr>
+    <h2>Organisation: </h2>
+    <p class="main-text">{{ user_profile.organisation }}</p>
+    <hr>
+    <h2>Job Title: </h2>
+    <p class="main-text">{{ user_profile.job_title }}</p>
+
+    {% if request.user.username == user %}
+        {% comment %} <a href="{% url 'edit_profile' request.user.username %}">Edit Profile</a> {% endcomment %}
+    {% endif %}
+{% endblock %}
