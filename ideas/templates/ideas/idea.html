@@ -5,19 +5,20 @@
 
 <h1 style="color:blue;" class="text-center">Ideas</h1>
 
-<div class="row" id="form-styling">
+<div class="row no-gutters">
     <div class="col-12">
-        <!-- Idea container -->
-        <div>
+        <!-- Display Ideas -->
+        <div class="ideas">
             {% for idea in ideas %}
                 <p style="color:blue;">
                 {{ idea.idea_message }}
             {% endfor %}
         </div>
-        <!-- Chat form -->
+        <!-- Form to submit new idea -->
         <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="text-center">
+                <label for="idea_message"><span class="sr-only">Please enter a message</span></label>
                 <input type="text" id="idea_message" name="idea_message" class="col-5">
                 <button type="submit">Send</button>
             </div>
