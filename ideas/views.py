@@ -20,9 +20,9 @@ class IdeaSummaryView(LoginRequiredMixin, View):
             total = 1
 
             if total < 1:
-                message = ('There is no active order')
+                message = ('There is no active board')
                 messages.warning(self.request, message=message)
-                return redirect('ideas/idea.html')
+                return redirect('profiles.html')
             else:
                 context = {
                     'object': board,
@@ -31,9 +31,9 @@ class IdeaSummaryView(LoginRequiredMixin, View):
                 return render(self.request, 'ideas/idea.html', context)
 
         except ObjectDoesNotExist:
-            message = ('There is no active order')
+            message = ('There is no active board')
             messages.warning(self.request, message=message)
-            return redirect('ideas/idea.html')
+            return redirect('profiles.html')
 
 
 def create_board(request):
