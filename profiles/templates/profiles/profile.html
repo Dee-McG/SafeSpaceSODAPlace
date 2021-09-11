@@ -14,6 +14,6 @@
     <p class="main-text">{{ user_profile.job_title }}</p>
 
     {% if request.user.username == user %}
-        {% comment %} <a href="{% url 'edit_profile' request.user.username %}">Edit Profile</a> {% endcomment %}
+        <a href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
     {% endif %}
 {% endblock %}

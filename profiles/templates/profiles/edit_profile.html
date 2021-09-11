@@ -4,7 +4,7 @@
 {% block content %}
     <h1>Edit Profile</h1>
 
-    {% comment %} <form method="POST" action="{% url 'edit_profile' request.user.username %}" class="form mb-2" enctype="multipart/form-data"> {% endcomment %}
+    <form method="POST" action="{% url 'edit_profile' request.user.username %}" class="form mb-2" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
             {{ field | as_crispy_field }}
