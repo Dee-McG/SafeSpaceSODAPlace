@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, request
 from django.views.generic import View
 
 from .models import Board, Idea
@@ -24,7 +24,9 @@ class IdeaSummaryView(LoginRequiredMixin, View):
                 messages.warning(self.request, message=message)
                 return redirect('profiles.html')
             else:
+                form = IdeaForm()
                 context = {
+                    'form': form,
                     'object': board,
                     'total': total
                 }
@@ -36,55 +38,23 @@ class IdeaSummaryView(LoginRequiredMixin, View):
             return redirect('profiles.html')
 
 
+    def post(self, *args, **kwargs):
+            """
+            When POST user will be redirected to
+            the payment form and billing address
+            will be saved in the database including the artwork.
+            """
+            form = IdeaForm(self.request.POST or None)
+            try:
+                order = Board.objects.get(user=self.request.user, closed=False)
+                if form.is_valid():
+                    form.save()
 
+                    return redirect('checkout:payment')
 
-
-
-
-def add_to_cart(request, slug):
-    """
-    Adds an item to the cart, creates an order and
-    checks if an item already is in the order.
-    Adds 1 popularity click.
-    """
-    if request.user.is_anonymous:
-        messages.add_message(request, messages.INFO,
-                             'Please login to order services')
-        return redirect('orders:services')
-    else:
-        item = get_object_or_404(Item, slug=slug)
-
-        order_item, created = OrderItem.objects.get_or_create(
-            item=item,
-            user=request.user,
-            ordered=False,
-        )
-        order_querySet = Order.objects.filter(user=request.user, ordered=False)
-        if order_querySet.exists():
-            order = order_querySet[0]
-
-            # check if the order item is in the order
-            if order.items.filter(item__slug=item.slug).exists():
-                messages.error(
-                    request, 'Only one of the same allowed')
-                return redirect('orders:services')
-            else:
-                order.items.add(order_item)
-
-                item.clicks += 1
-                item.save()
-
-                messages.info(request, 'Service is added to the cart')
-                return redirect('orders:cart')
-        else:
-            order = Order.objects.create(user=request.user)
-            order.items.add(order_item)
-            messages.info(request, 'Service is added to the cart')
-            return redirect('orders:cart')
-
-
-
-
+            except ObjectDoesNotExist:
+                messages.warning(self.request, 'There is no active order')
+                return redirect('checkout:checkout')
 
 
 
