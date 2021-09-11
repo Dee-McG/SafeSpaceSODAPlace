@@ -37,18 +37,61 @@
 </head>
 
 <body>
-    <header>
-
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">SafeSpaceSODAPlace</a>
-
-                <ul class="navbar-nav ml-auto">
+    <div class="content">
+        <header>
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <img src="/media/site-logo-img.png">
+                        <div class="brand-text brand-text-cont">
+                            <p>SafeSpace</p>
+                            <div class="brand-text">
+                                <img src="/media/soda-social-logo2.png" height="17px">
+                                <span>Place</span>
+                            </div>
+                        </div>
+                    </a>
+                    <ul class="navbar-nav ml-auto">
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+                            <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                        {% else %}
+                            <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="message-container">
+            {% if messages %}
+            <div>
+                <strong>Messages:</strong>
+                <ul>
+                    {% for message in messages %}
+                    <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    {% block content %}
+    {% endblock %}
+    </div>
+    <footer>
+        <div class="row mx-auto">
+            <div class="col-12 col-md-3 col-lg-6 footer-cols">
+                <h3>SafeSpace<br>SODAPlace</h3>
+                <img class="soda-logo-footer" src="/media/soda-social-logo.png" alt="SODA Social logo">
+            </div>
+            <div class="col-12 col-md-3 col-lg-2 footer-cols">
+                <h5>Account</h5>
+                <ul class="list-unstyled">
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
                     <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
@@ -57,55 +100,34 @@
                     <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
                     {% endif %}
                 </ul>
-
             </div>
-        </nav>
-    </header>
-
-    <div class="message-container">
-        {% if messages %}
-        <div>
-            <strong>Messages:</strong>
-            <ul>
-                {% for message in messages %}
-                <li>{{message}}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-    </div>
-
-    {% block content %}
-    {% endblock %}
-
-    <footer>
-        <div class="row">
-            <div class="col-3">
-                <h3>SafeSpace<br>SODAPlace</h3>
-                <img src="/media/soda-social-logo.png" alt="SODA Social logo">
-            </div>
-            <div class="col-3">
-                <h5>Account</h5>
-                <ul class="list-unstyled">
-                    {% if user.is_authenticated %}
-                        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-                        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-                    {% else %}
-                        <li><a href="{% url 'account_login' %}">Sign In</a></li>
-                        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3 col-lg-2 footer-cols">
                 <h5>Socials</h5>
                 <ul class="list-unstyled">
-                    <li><i class="fab fa-facebook-square"></i></li>
-                    <li><i class="fab fa-twitter-square"></i></li>
-                    <li><i class="fab fa-facebook-square"></i></li>
-                    <li><i class="fab fa-instagram-square"></i></li>
+                    <li class="footer-socials">
+                        <a href="" target="blank" alt="">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="footer-socials">
+                        <a href="" target="blank" alt="">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                    </li>
+                    <br>
+                    <li class="footer-socials">
+                        <a href="" target="blank" alt="">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="footer-socials">
+                        <a href="" target="blank" alt="">
+                            <i class="fab fa-instagram-square"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3 col-lg-2 footer-cols">
                 <h5>Contact</h5>
                 <ul class="list-unstyled">
                     <li>Address Line 1</li>
