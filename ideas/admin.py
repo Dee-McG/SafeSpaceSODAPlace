@@ -1,12 +1,24 @@
 from django.contrib import admin
-from .models import Idea
+from .models import Board, Idea
 
 
-class IdeaAdmin(admin.ModelAdmin):
-    """ Idea message admin """
+class BoardAdmin(admin.ModelAdmin):
     list_display = (
-        'idea',
+        'id_code',
+        'user',
+        'date',
+        'closed',
     )
 
 
+class IdeaAdmin(admin.ModelAdmin):
+    list_display = (
+        'board',
+        'user',
+        'idea_message',
+        'closed',
+    )
+
+
+admin.site.register(Board, BoardAdmin)
 admin.site.register(Idea, IdeaAdmin)
