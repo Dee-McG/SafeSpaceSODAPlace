@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from .serializers import CommentSerializer, TopicSerializer
 
 
-def discussions(request):
+def index(request):
     """
     Renders the discussions index page.
     """

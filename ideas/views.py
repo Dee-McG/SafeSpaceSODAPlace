@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 
-def ideas(request):
+def index(request):
     """ A view to return the ideas page """
     return render(request, "ideas/idea.html")

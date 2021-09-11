@@ -38,35 +38,11 @@
 
 <body>
     <div class="content">
-        <header>
-            <nav class="navbar navbar-dark navbar-expand-lg">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="{% url 'home' %}">
-                        <img src="/media/site-logo-img.png">
-                        <div class="brand-text brand-text-cont">
-                            <p>SafeSpace</p>
-                            <div class="brand-text">
-                                <img src="/media/soda-social-logo2.png" height="17px">
-                                <span>Place</span>
-                            </div>
-                        </div>
-                    </a>
-                    <ul class="navbar-nav ml-auto">
-                        {% if user.is_authenticated %}
-                            <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-                            <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-                        {% else %}
-                            <li><a href="{% url 'account_login' %}">Sign In</a></li>
-                            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <header>
+        {% block navbar %}
+            {% include 'navbar.html' %}
+        {% endblock %}
+    </header>
         
         <div class="message-container">
             {% if messages %}
