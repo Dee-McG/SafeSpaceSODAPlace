@@ -25,7 +25,7 @@
       "**/__pycache__": true,
       "**/env": true
    },
-   "files.autoSave": "off",
+   "files.autoSave": "afterDelay",
    "workbench.colorTheme": "Visual Studio Dark",
    "editor.defaultFormatter": "HookyQR.beautify",
    "[jsonc]": {

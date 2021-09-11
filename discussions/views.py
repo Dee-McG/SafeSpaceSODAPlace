@@ -7,12 +7,16 @@ from rest_framework.response import Response
 from .serializers import CommentSerializer, TopicSerializer
 
 
-def discussions(request):
+def index(request):
     """
-    A view to return the 
-    discussions page.
+    Renders the discussions index page.
     """
-    return render(request, "discussions/discussion.html")
+    topic_list = Topic.objects.all()
+
+    context = {
+        'topic_list': topic_list,
+    }
+    return render(request, 'discussions/discussion.html', context)
 
 
 @api_view(['GET'])
