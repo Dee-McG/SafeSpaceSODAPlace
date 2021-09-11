@@ -1,6 +1,18 @@
 from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
+
+
+class Idea(models.Model):
+    """
+    A model to the board items
+    add, save and display chat messages.
+    """
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    closed = models.BooleanField(default=False)
+    idea_message = models.CharField(max_length=250, null=False, blank=False)
+
+    def __str__(self):
+        return self.idea_message
 
 
 class Board(models.Model):
@@ -12,20 +24,10 @@ class Board(models.Model):
     date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     closed = models.BooleanField(default=False)
+    items = models.ManyToManyField(Idea)
 
     def __str__(self):
         return self.id_code
 
 
-class Idea(models.Model):
-    """
-    A model to the board items
-    add, save and display chat messages.
-    """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
-    closed = models.BooleanField(default=False)
-    idea_message = models.CharField(max_length=250, null=False, blank=False)
 
-    def __str__(self):
-        return self.idea_message
