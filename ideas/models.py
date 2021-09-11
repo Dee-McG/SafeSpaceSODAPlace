@@ -8,7 +8,7 @@ class Idea(models.Model):
     A model to save and display chat messages
     """
     idea = models.CharField(max_length=80,
-                            null=False, blank=False, unique=True)
+                            null=False, blank=False)
     idea_message = models.CharField(max_length=2500,
                                null=False, blank=False)
 
