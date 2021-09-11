@@ -15,8 +15,8 @@
 
 {% if socialaccount_providers %}
 <p class="main-text">{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+  for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
 
@@ -32,19 +32,23 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p class="main-text">{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}" class="anchors">sign up</a> first.{% endblocktrans %}</p>
+  <a href="{{ signup_url }}" class="anchors">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
+
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
   {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="btn btn-outline-black rounded-0 main-text anchors" href="{% url 'home' %}">Home</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <!-- <a class="btn btn-outline-black rounded-0 main-text anchors" href="{% url 'home' %}">Home</a> -->
+  <button class="primaryAction" type="submit"
+    style="background-color: #0E2143; color: #FFFFC2; border-radius: 5px; padding: 5px; margin-bottom: 10px;">{% trans "Sign In" %}
+    &raquo;</button>
   <p class="mt-2">
-    <a class="button secondaryAction anchors" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <a class="button secondaryAction anchors"
+      href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
 

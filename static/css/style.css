@@ -25,6 +25,18 @@ a {
     min-height: calc(100vh - 270px);
 }
 
+/* Palette
+Pale off white:
+#FFFFC2
+Bright yellow/light orange:
+#FFC933
+Bright Orange:
+#FF6600
+Bright Blue:
+#2B63CA
+Darkest Blue:
+#0E2143
+*/
 
 /* NAVBAR */
 
@@ -38,7 +50,7 @@ a {
 }
 
 .brand-text {
-    display:inline-block;
+    display: inline-block;
 }
 
 .brand-text-cont {
@@ -253,3 +265,48 @@ footer a:hover {
 /* .hide {
     display: none;
 } */
+
+/*profile*/
+
+.edit-profile {
+    font-size: 140%;
+    padding-left: 1.5rem;
+}
+
+.edit-profile:hover {
+    text-decoration: none;
+    color: #FF6600
+}
+
+#profile-text {
+    justify-content: center;
+}
+
+.card-body>h1 {
+    margin: 1rem 0;
+}
+
+.card-body>hr {
+    margin: 0.5rem 0;
+    color: #FF6600;
+}
+
+.card-body>p {
+    margin: 0;
+    padding-left: 0;
+}
+
+/*Edit Profile*/
+
+.edit-profile-btn {
+    background-color: #0E2143;
+    color: #FFFFC2;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.edit-profile-btn:hover {
+    background-color: #FF6600;
+    color: #0E2143;
+}
