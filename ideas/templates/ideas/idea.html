@@ -3,8 +3,26 @@
 
 {% block content %}
 
-<header>
-  <h1 id="title">Ideas</h1>
-</header>
+<h1 style="color:blue;" class="text-center">Ideas</h1>
+
+<div class="row" id="form-styling">
+    <div class="col-12">
+        <!-- Idea container -->
+        <div>
+            {% for idea in ideas %}
+                <p style="color:blue;">
+                {{ idea.idea_message }}
+            {% endfor %}
+        </div>
+        <!-- Chat form -->
+        <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="text-center">
+                <input type="text" id="idea_message" name="idea_message" class="col-5">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
