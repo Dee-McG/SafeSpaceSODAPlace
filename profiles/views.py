@@ -52,7 +52,7 @@ def edit_profile(request, user):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated!')
-            return redirect(reverse('user_profile', args=[user]))
+            return redirect(reverse('profiles', args=[user]))
         else:
             messages.error(request,
                            'Profile update failed.'
