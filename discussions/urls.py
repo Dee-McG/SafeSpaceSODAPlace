@@ -4,7 +4,7 @@ from . import views
 app_name = 'discussions'
 
 urlpatterns = [
-    path('', views.discussions, name='discussion'),
+    path('', views.index, name='index'),
 
     # REST API Url's
     path('list', views.topic_list, name='topic_list'),
