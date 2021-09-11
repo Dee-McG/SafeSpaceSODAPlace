@@ -4,6 +4,7 @@ from django.contrib import messages
 
 from .forms import EditProfileForm
 from .models import UserProfile
+from ideas.models import Board
 from django.contrib.auth.models import User
 
 
@@ -22,10 +23,12 @@ def profiles(request, user):
         get_user = get_object_or_404(User, username=user)
 
         user_profile = get_object_or_404(UserProfile, user=get_user)
+        board_list = request.user.board_set.get()
 
         context = {
                 'user_profile': user_profile,
                 'user': user,
+                'board_list': board_list,
             }
 
         return render(request, 'profiles/profile.html', context)

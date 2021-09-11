@@ -20,5 +20,10 @@
 {% if request.user.username == user %}
 <br>
         <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
+        {% if board_list == none %}
+            Activate a board!
+        {% else %} 
+            your active board url is: {{ board_list }}
+        {% endif %}
         {% endif %}
 {% endblock %}

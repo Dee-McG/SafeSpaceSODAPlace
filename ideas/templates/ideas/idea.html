@@ -7,9 +7,9 @@
 
 <div class="row no-gutters">
     <div class="col-12">
-        <!-- Display Ideas -->
-        <div class="ideas">
-            {% for idea in ideas %}
+        <!-- Idea container -->
+        <div>
+            {% for idea in object.items.all %}
                 <p style="color:blue;">
                 {{ idea.idea_message }}
             {% endfor %}

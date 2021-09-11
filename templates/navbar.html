@@ -19,7 +19,7 @@
         <ul class="navbar-nav ml-auto">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'discussions:index' %}">Discussions</a></li>
-            <li><a href="">Ideas</a></li>
+            <li><a href="{% url 'ideas:board' %}">Ideas</a></li>
             
 
             {% if user.is_authenticated %}
