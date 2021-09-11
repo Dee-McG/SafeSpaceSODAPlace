@@ -9,7 +9,7 @@
     <div class="col-12">
         <!-- Idea container -->
         <div>
-            {% for idea in ideas %}
+            {% for idea in object.items.all %}
                 <p style="color:blue;">
                 {{ idea.idea_message }}
             {% endfor %}
