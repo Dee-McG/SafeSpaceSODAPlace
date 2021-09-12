@@ -22,6 +22,18 @@ def profiles(request, user):
     try:
         get_user = get_object_or_404(User, username=user)
         user_profile = get_object_or_404(UserProfile, user=get_user)
+    except Exception:
+        user_profile = UserProfile.objects.create(
+            user=request.user, name='')
+        context = {
+            'user_profile': user_profile,
+            'user': user,
+        }
+        return render(request, 'profiles/profile.html', context)
+
+    try:
+        get_user = get_object_or_404(User, username=user)
+        user_profile = get_object_or_404(UserProfile, user=get_user)
         board = Board.objects.get(user=get_user, closed=False)
 
         context = {
