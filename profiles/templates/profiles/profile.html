@@ -19,11 +19,13 @@
 </div>
 {% if request.user.username == user %}
 <br>
-        <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
-        {% if board_list == none %}
-            Activate a board!
-        {% else %} 
-            your active board url is: {{ board_list }}
-        {% endif %}
-        {% endif %}
+<div class="container-fluid">
+    <a class="activate-board m-4" href="{% if board_list == none %}">Activate a board!</a>
+
+    {% else %}
+    your active board url is: {{ board_list }}
+    {% endif %}
+    <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
+</div>
+{% endif %}
 {% endblock %}
