@@ -38,6 +38,26 @@ Darkest Blue:
 #0E2143
 */
 
+
+/* BUTTONS */
+
+.cta-btn {
+    border: #FF6600 2px solid;
+    color: #FF6600;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.cta-btn:hover {
+    text-decoration: none;
+    border: #0E2143 2px solid;
+    color: #0E2143;
+    background-color: #FF6600;
+    padding: 5px;
+    margin-top: 10px;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -160,6 +180,11 @@ footer a:hover {
 .inner-cont {
     margin-top: 20vh;
     padding: 0 10px;
+    text-align: center;
+}
+
+.inner-cont h2 {
+    margin-bottom: 30px;
 }
 
 .hero-content h1 {
@@ -169,12 +194,15 @@ footer a:hover {
         0 0 21px #FF6600,
         0 0 48px #FF6600;
     font-weight: 300;
-    margin-bottom: 20px;
 }
 
 .hero-content h2 {
     font-weight: 300;
     color: #FFC933;
+}
+
+#first-content {
+    margin-top: 20px;
 }
 
 .home-content h3 {
