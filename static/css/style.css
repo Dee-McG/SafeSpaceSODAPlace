@@ -319,8 +319,13 @@ footer a:hover {
 }
 
 .board-link {
-    color: #FF6600;
+    color: #0E2143;
     padding-left: 10px;
+}
+
+.board-link:hover {
+    color: #FF6600;
+    text-decoration: none;
 }
 
 /*Edit Profile*/
