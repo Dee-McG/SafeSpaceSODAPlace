@@ -7,7 +7,10 @@ from django.http import HttpResponseRedirect, request
 from django.views.generic import View
 
 from .models import Board, Idea
-from .forms import IdeaForm
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import BoardSerializer, IdeaSerializer
 
 
 class IdeaSummaryView(LoginRequiredMixin, View):
@@ -17,6 +20,7 @@ class IdeaSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
             board = Board.objects.get(user=self.request.user, closed=False)
+            ideas = Idea.objects.filter(user=self.request.user, closed=False)
             total = 1
 
             if total < 1:
@@ -24,11 +28,10 @@ class IdeaSummaryView(LoginRequiredMixin, View):
                 messages.warning(self.request, message=message)
                 return redirect('profiles.html')
             else:
-                form = IdeaForm()
                 context = {
-                    'form': form,
-                    'object': board,
-                    'total': total
+                    'board': board,
+                    'total': total,
+                    'ideas': ideas,
                 }
                 return render(self.request, 'ideas/idea.html', context)
 
@@ -38,46 +41,27 @@ class IdeaSummaryView(LoginRequiredMixin, View):
             return redirect('profiles.html')
 
 
-    def post(self, *args, **kwargs):
-            """
-            When POST user will be redirected to
-            the payment form and billing address
-            will be saved in the database including the artwork.
-            """
-            form = IdeaForm(self.request.POST or None)
-            try:
-                order = Board.objects.get(user=self.request.user, closed=False)
-                if form.is_valid():
-                    form.save()
-
-                    return redirect('checkout:payment')
-
-            except ObjectDoesNotExist:
-                messages.warning(self.request, 'There is no active order')
-                return redirect('checkout:checkout')
-
-
-
-def create_board(request):
+@api_view(['GET'])
+def idea_list(request):
     """
-    Creates an idea board to
-    places ideas on.
+    REST framework for Django to serialize
+    & return all ideas in list form.
     """
-    if request.user.is_anonymous:
-        messages.add_message(request, messages.INFO,
-                             'Please login to place an idea')
-        return redirect('ideas:index')
-    else:
-        board_querySet = Board.objects.filter(user=request.user, closed=False)
+    ideas = Idea.objects.all()
+    serializer = IdeaSerializer(ideas, many=True)
 
-        if board_querySet.exists():
-            print('EUREKA')
-            board = board_querySet[0]
+    return Response(serializer.data)
 
-            messages.info(request, 'Board is already active')
-            print('Board already active')
-            return redirect('ideas:index')
-        else:
-            board = Board.objects.create(user=request.user)
-            messages.info(request, 'Idea board is created')
-            return redirect('ideas:index')
+
+@api_view(['POST'])
+def idea_create(request):
+    """
+    REST framework for Django to serialize
+    & create a single idea.
+    """
+    serializer = IdeaSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
