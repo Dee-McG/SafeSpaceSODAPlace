@@ -22,7 +22,7 @@ class Comment(models.Model):
     to be collected by the topic.
     """
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    content = models.TextField(max_length=250, blank=True, null=True)
+    content = models.TextField(max_length=2500, blank=True, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
 
