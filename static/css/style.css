@@ -170,6 +170,19 @@ footer a:hover {
     padding: 10px;
 }
 
+/* IDEAS */
+.ideas {
+    padding: 0 2% 0 2%;
+}
+
+#idea_message {
+    height: 64px;
+}
+
+.input-container {
+    margin-top: 30px;
+}
+
 /* INDEX.HTML */
 
 .container-fluid {
@@ -288,7 +301,7 @@ footer a:hover {
 /* Topic Title */
 
 .topic {
-    color: white;
+    color: #0E2143;
     font-size: 150%;
     width: 60%;
     left: 20px;
