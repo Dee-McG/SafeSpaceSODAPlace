@@ -22,7 +22,7 @@ a {
 }
 
 .content {
-    min-height: calc(100vh - 270px);
+    min-height: calc(100vh - 254px);
 }
 
 /* Palette
@@ -117,6 +117,17 @@ footer a:hover {
 
 .address-col li {
     font-size: .8rem;
+}
+
+/* MESSAGES */
+
+.message-container {
+    position: absolute;
+    top: 96px;
+    right: 10px;
+    background-color: #FFF;
+    border: 1px solid #2B63CA;
+    padding: 10px;
 }
 
 /* INDEX.HTML */
