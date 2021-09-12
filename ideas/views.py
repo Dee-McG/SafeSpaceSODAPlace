@@ -41,10 +41,6 @@ class IdeaSummaryView(LoginRequiredMixin, View):
             return redirect('profiles.html')
 
 
-
-
-
-
 def board_id(request, pk_board):
     """
     the selected board in the database.
@@ -59,10 +55,6 @@ def board_id(request, pk_board):
         'current_user': current_user,
     }
     return render(request, 'ideas/board.html', context)
-
-
-
-
 
 
 @api_view(['GET'])
