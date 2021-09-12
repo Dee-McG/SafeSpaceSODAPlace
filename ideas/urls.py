@@ -6,6 +6,7 @@ app_name = 'ideas'
 
 urlpatterns = [
     path('board/', IdeaSummaryView.as_view(), name='board'),
+    path('grab/', views.grab_ideas, name='grab_ideas'),
 
     # REST API Url's
     path('list/', views.idea_list, name='idea_list'),
