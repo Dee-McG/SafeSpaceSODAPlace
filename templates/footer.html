@@ -1,0 +1,59 @@
+<div class="row mx-auto">
+    <div class="col-12 col-md-3 col-lg-6 footer-cols">
+        <h3>SafeSpace<br>SODAPlace</h3>
+        <img class="soda-logo-footer" src="/media/soda-social-logo.png" alt="SODA Social logo">
+    </div>
+    <div class="col-12 col-md-3 col-lg-2 footer-cols">
+        <h5>Account</h5>
+        <ul class="list-unstyled">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+            <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Sign In</a></li>
+            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="col-12 col-md-3 col-lg-2 footer-cols">
+        <h5>Socials</h5>
+        <ul class="list-unstyled">
+            <li class="footer-socials">
+                <a href="https://www.facebook.com/" target="blank" >
+                    <i class="fab fa-facebook-square"></i>
+                    <span class="sr-only">Facebook - Opens in new tab</span>
+                </a>
+            </li>
+            <li class="footer-socials">
+                <a href="https://www.twitter.com/" target="blank">
+                    <i class="fab fa-twitter-square"></i>
+                    <span class="sr-only">Twitter - Opens in new tab</span>
+                </a>
+            </li>
+            <br>
+            <li class="footer-socials">
+                <a href="https://linkedin.com" target="blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="sr-only">LinkedIn - Opens in new tab</span>
+                </a>
+            </li>
+            <li class="footer-socials">
+                <a href="https://www.instagram.com" target="blank">
+                    <i class="fab fa-instagram-square"></i>
+                    <span class="sr-only">Instagram - Opens in new tab</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-12 col-md-3 col-lg-2 footer-cols">
+        <h5>Contact</h5>
+        <ul class="list-unstyled">
+            <li>Address Line 1</li>
+            <li>Address Line 2</li>
+            <li>City</li>
+            <li>Eircode</li>
+            <li>Tel: 01358 255 61558</li>
+            <li>Email: blank@blank.com</li>
+        </ul>
+    </div>
+</div>
