@@ -15,10 +15,10 @@ def index(request):
     Renders the discussions index page.
     """
     topic_list = Topic.objects.all()
-    user = request.user
-    get_user = get_object_or_404(User, username=user)
 
     try:
+        user = request.user
+        get_user = get_object_or_404(User, username=user)
         board = Board.objects.get(user=get_user, closed=False)
     except Exception:
         context = {
@@ -27,6 +27,8 @@ def index(request):
         return render(request, 'discussions/discussion.html', context)
     
     board = Board.objects.get(user=get_user, closed=False)
+    user = request.user
+    get_user = get_object_or_404(User, username=user)
 
     context = {
         'topic_list': topic_list,

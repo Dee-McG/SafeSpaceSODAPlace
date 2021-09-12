@@ -6,14 +6,17 @@ from django.contrib.auth.models import User
 
 def index(request):
     """ A view to return the home page """
-    user = request.user
-    get_user = get_object_or_404(User, username=user)
-
+    
     try:
+        user = request.user
+        get_user = get_object_or_404(User, username=user)
         board = Board.objects.get(user=get_user, closed=False)
     except Exception:
         return render(request, 'home/index.html')
     
+    user = request.user
+    get_user = get_object_or_404(User, username=user)
+
     board = Board.objects.get(user=get_user, closed=False)
 
     context = {
