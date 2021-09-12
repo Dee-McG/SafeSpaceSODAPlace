@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %}Idea Board{% endblock %}
+
 {% block content %}
 
 <h1 style="color:blue;" class="text-center">Ideas board: <span id="board_id">{{ board }}</span><span id="user_id">{{current_user.id}}</span></h1>
