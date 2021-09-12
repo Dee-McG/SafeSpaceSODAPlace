@@ -1,38 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 <div class="card" style="width: 50%; border: 0em;">
     <div class="card-body">
         <h1>Profile</h1>
-
-        <h5>Name: </h5>
-        <p class="main-text">{{ user_profile.name }}</p>
+        <h3>Name: </h3>
+        <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
         <hr>
-        <h5>Organisation: </h5>
+        <h3>Organisation: </h3>
         <p class="main-text">{{ user_profile.organisation }}</p>
         <hr>
-        <h5>Job Title: </h5>
+        <h3>Job Title: </h3>
         <p class="main-text">{{ user_profile.job_title }}</p>
         <hr>
     </div>
 </div>
 {% if request.user.username == user %}
 <br>
-<div class="container-fluid">
-    <a class="activate-board-btn" href="{% if board_list == none %}">Activate a board!</a>
-
-    {% else %}
-    your active board url is: {{ board_list }}
-    {% endif %}
     <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
-</div>
+    {% if board == none %}
+      Activate a board!
+    {% else %} 
+        share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
+    {% endif %}
 {% endif %}
-      <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
-      {% if board == none %}
-          Activate a board!
-      {% else %} 
-          share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
-      {% endif %}
-      {% endif %}
 {% endblock %}
