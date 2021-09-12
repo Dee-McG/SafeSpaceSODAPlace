@@ -46,7 +46,7 @@ Darkest Blue:
 }
 
 .navbar-brand {
-    margin: -10px 10px 3px 10px;
+    margin: 5px 10px 3px 10px;
 }
 
 .brand-text {
@@ -76,7 +76,7 @@ Darkest Blue:
 }
 
 .navbar-nav li {
-    padding: 0 12px;
+    padding: 4px 12px;
 }
 
 /* FOOTER */
