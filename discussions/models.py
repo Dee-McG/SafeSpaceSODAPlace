@@ -8,7 +8,7 @@ class Topic(models.Model):
     All comments belong to a topic.
     """
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=2500)
     placed = models.BooleanField()
     datetime = models.DateTimeField(auto_now_add=True)
 
