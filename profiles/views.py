@@ -32,6 +32,10 @@ def profiles(request, user):
 
         return render(request, 'profiles/profile.html', context)
     except Exception:
+        context = {
+                'user_profile': user_profile,
+                'user': user,
+            }
         return render(request, 'profiles/profile.html', context)
 
 
