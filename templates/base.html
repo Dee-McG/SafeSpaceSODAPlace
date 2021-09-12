@@ -22,17 +22,18 @@
 </head>
 
 <body>
-    <header>
-        {% block navbar %}
-            {% include 'navbar.html' %}
-        {% endblock %}
-    </header>
-        
-    <main>
-        {% block content %}
-        {% endblock  %}
-    </main>
-
+    <div class="content">
+        <header>
+            {% block navbar %}
+                {% include 'navbar.html' %}
+            {% endblock %}
+        </header>
+            
+        <main>
+            {% block content %}
+            {% endblock  %}
+        </main>
+    </div>
     <footer>
         {% block footer %}
           {% include 'footer.html' %}
