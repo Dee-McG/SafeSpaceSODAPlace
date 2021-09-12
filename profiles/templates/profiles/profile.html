@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
-    <div class="card" style="width: 50%; border: 0em;">
+
+<div class="profile-container">
+    <div class="card row" style="width: 50%; border: 0em;">
         <div class="card-body">
             <h1>Profile <span id="user_id">{{user_profile.id}}</span></h1>
-            <h3>Name: </h3>
+            <h5>Name: </h5>
             <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
             <hr>
-            <h3>Organisation: </h3>
+            <h5>Organisation: </h5>
             <p class="main-text">{{ user_profile.organisation }}</p>
             <hr>
-            <h3>Job Title: </h3>
+            <h5>Job Title: </h5>
             <p class="main-text">{{ user_profile.job_title }}</p>
             <hr>
         </div>
@@ -34,12 +35,6 @@
             share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
         {% endif %}
     {% endif %}
-
-
-
-
-
-
 
 {% endblock %}
 
