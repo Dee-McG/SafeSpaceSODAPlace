@@ -40,6 +40,6 @@ form.addEventListener('submit', function (e) {
       'id_code': id_code
     })
   }).then(function (response) {
-    //location.reload();
+    location.reload();
   });
 });
