@@ -27,10 +27,7 @@ form.addEventListener('submit', function (e) {
 
   let idea_message = document.getElementById('idea_message').value;
   let board_id = document.getElementById('board_id').innerHTML;
-
-  console.log(board_id);
-  console.log(idea_message);
-
+  let user_id = document.getElementById('user_id').innerHTML;
 
   fetch(url, {
     method: 'POST',
@@ -39,12 +36,12 @@ form.addEventListener('submit', function (e) {
       'X-CSRFToken': csrftoken,
     },
     body: JSON.stringify({
-      'user': 1,
+      'user': user_id,
       'closed': false,  
       'idea_message': idea_message,
       'board': board_id
     })
   }).then(function (response) {
-    //location.reload();
+    location.reload();
   });
 });
