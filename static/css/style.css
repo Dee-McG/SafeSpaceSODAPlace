@@ -166,10 +166,16 @@ footer a:hover {
 .orange-underline {
     border-top: 2px solid #FF6600;
     width: 40%;
+    margin: auto;
 }
 
 .content-row {
     margin: 10px 0 50px 0;
+}
+
+.content-row p {
+    text-align: justify;
+    text-justify: inter-character;
 }
 
 .cont-img {
