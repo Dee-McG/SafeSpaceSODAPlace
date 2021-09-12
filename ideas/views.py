@@ -70,6 +70,20 @@ def idea_list(request):
 
 
 @api_view(['POST'])
+def board_create(request):
+    """
+    REST framework for Django to serialize
+    & create an idea board.
+    """
+    serializer = BoardSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
 def idea_create(request):
     """
     REST framework for Django to serialize
