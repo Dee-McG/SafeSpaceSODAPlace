@@ -22,7 +22,7 @@ a {
 }
 
 .content {
-    min-height: calc(100vh - 270px);
+    min-height: calc(100vh - 254px);
 }
 
 /* Palette
@@ -102,15 +102,33 @@ footer a:hover {
     text-decoration: none;
 }
 
-.soda-logo-footer {
-    width: 135px;
+.footer-cols img {
+    max-width: 100%;
+}
+
+.footer-col-header {
+    font-size: 1.25rem;
 }
 
 .footer-socials {
-    font-size: 3rem;
+    font-size: 2rem;
     display: inline;
 }
 
+.address-col li {
+    font-size: .8rem;
+}
+
+/* MESSAGES */
+
+.message-container {
+    position: absolute;
+    top: 96px;
+    right: 10px;
+    background-color: #FFF;
+    border: 1px solid #2B63CA;
+    padding: 10px;
+}
 
 /* INDEX.HTML */
 
