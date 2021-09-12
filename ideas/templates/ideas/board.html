@@ -13,7 +13,11 @@
         <div>
             {% for idea in ideas %}
                 <p style="color:blue;">
-                {{ idea.idea_message }}
+                {% if idea.closed == False %}
+                    {{ idea.idea_message }}
+                {% endif %}
+            {% empty %}
+                <li>Sorry, no idea placed yet.</li>
             {% endfor %}
         </div>
         <!-- Form to submit new idea -->
@@ -21,7 +25,10 @@
             <div class="text-center">
                 <label for="idea_message"><span class="sr-only">Please enter a message</span></label>
                 <input type="text" id="idea_message" name="idea_message" class="col-5">
-                <button class="btn waves-effect waves-light light-blue lighten-2" type="submit" name="action">Sending</button>
+                <button class="btn btn-outline-secondary" type="submit" name="action">Send idea</button>
+                {% if ideas %}
+                    <a href="{% url 'home' %}ideas/grab" class="btn btn-info" role="button">Create discussion</a>
+                {% endif %}
             </div>
         </form>
     </div>

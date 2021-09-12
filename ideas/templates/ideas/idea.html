@@ -11,7 +11,9 @@
         <div>
             {% for idea in ideas %}
                 <p style="color:blue;">
-                {{ idea.idea_message }}
+                {% if idea.closed == False %}
+                    {{ idea.idea_message }}
+                {% endif %}
             {% endfor %}
         </div>
         <!-- Form to submit new idea -->
