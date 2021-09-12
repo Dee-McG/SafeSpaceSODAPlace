@@ -102,15 +102,22 @@ footer a:hover {
     text-decoration: none;
 }
 
-.soda-logo-footer {
-    width: 135px;
+.footer-cols img {
+    max-width: 100%;
+}
+
+.footer-col-header {
+    font-size: 1.25rem;
 }
 
 .footer-socials {
-    font-size: 3rem;
+    font-size: 2rem;
     display: inline;
 }
 
+.address-col li {
+    font-size: .8rem;
+}
 
 /* INDEX.HTML */
 

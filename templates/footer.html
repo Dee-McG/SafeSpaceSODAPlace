@@ -1,10 +1,11 @@
+{% load static %}
+
 <div class="row mx-auto">
     <div class="col-12 col-md-3 col-lg-6 footer-cols">
-        <h3>SafeSpace<br>SODAPlace</h3>
-        <img class="soda-logo-footer" src="/media/soda-social-logo.png" alt="SODA Social logo">
+        <img class="soda-logo-footer" src="{% static 'img/ss-full-logo.png' %}" alt="SODA Social logo">
     </div>
     <div class="col-12 col-md-3 col-lg-2 footer-cols">
-        <h5>Account</h5>
+        <p class="footer-col-header">Account</p>
         <ul class="list-unstyled">
             {% if user.is_authenticated %}
             <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
@@ -16,10 +17,10 @@
         </ul>
     </div>
     <div class="col-12 col-md-3 col-lg-2 footer-cols">
-        <h5>Socials</h5>
+        <p class="footer-col-header">Socials</p>
         <ul class="list-unstyled">
             <li class="footer-socials">
-                <a href="https://www.facebook.com/" target="blank" >
+                <a href="https://www.facebook.com/" target="blank">
                     <i class="fab fa-facebook-square"></i>
                     <span class="sr-only">Facebook - Opens in new tab</span>
                 </a>
@@ -30,7 +31,6 @@
                     <span class="sr-only">Twitter - Opens in new tab</span>
                 </a>
             </li>
-            <br>
             <li class="footer-socials">
                 <a href="https://linkedin.com" target="blank">
                     <i class="fab fa-linkedin"></i>
@@ -45,15 +45,15 @@
             </li>
         </ul>
     </div>
-    <div class="col-12 col-md-3 col-lg-2 footer-cols">
-        <h5>Contact</h5>
+    <div class="col-12 col-md-3 col-lg-2 footer-cols address-col">
+        <p class="footer-col-header">Contact</p>
         <ul class="list-unstyled">
-            <li>Address Line 1</li>
-            <li>Address Line 2</li>
-            <li>City</li>
-            <li>Eircode</li>
-            <li>Tel: 01358 255 61558</li>
-            <li>Email: blank@blank.com</li>
+            <li>Global House</li>
+            <li>67 Middlewich Road</li>
+            <li>Canterbury</li>
+            <li>CT1 2EH</li>
+            <li><a href="tel:01632960526" alt="business phone number">Tel: 01632 960526</a></li>
+            <li><a href="mailto:hello@sssp.com" alt="business email">Email: hello@sssp.com</a></li>
         </ul>
     </div>
 </div>
