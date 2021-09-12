@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect, request
 from django.views.generic import View
 
 from .models import Board, Idea
+from discussions.models import Topic
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -95,3 +96,28 @@ def idea_create(request):
         serializer.save()
 
     return Response(serializer.data)
+
+
+def grab_ideas(request):
+    """
+    Transfer ideas to discussions
+    """
+    
+
+    # Assign closed ststus to transfered ideas
+    ideas = Idea.objects.filter(user=request.user, closed=False)
+
+    for idea in ideas:
+        new_topic = Topic(
+            user=request.user,
+            title=idea,
+            placed=False,
+        )
+        new_topic.save()
+
+    ideas.update(closed=True)
+
+    for idea in ideas:
+        idea.save() 
+
+    return render(request, 'ideas/board.html')
