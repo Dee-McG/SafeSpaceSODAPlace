@@ -23,12 +23,12 @@ def profiles(request, user):
         get_user = get_object_or_404(User, username=user)
 
         user_profile = get_object_or_404(UserProfile, user=get_user)
-        board_list = request.user.board_set.get()
+        board = Board.objects.get(user=get_user, closed=False)
 
         context = {
                 'user_profile': user_profile,
                 'user': user,
-                'board_list': board_list,
+                'board': board,
             }
 
         return render(request, 'profiles/profile.html', context)

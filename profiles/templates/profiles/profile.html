@@ -19,13 +19,11 @@
 </div>
 {% if request.user.username == user %}
 <br>
-<div class="container-fluid">
-    <a class="activate-board-btn" href="{% if board_list == none %}">Activate a board!</a>
-
-    {% else %}
-    your active board url is: {{ board_list }}
-    {% endif %}
-    <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
-</div>
-{% endif %}
+        <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
+        {% if board == none %}
+            Activate a board!
+        {% else %} 
+            share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
+        {% endif %}
+        {% endif %}
 {% endblock %}
