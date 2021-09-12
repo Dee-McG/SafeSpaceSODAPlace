@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Topic, Comment
+from ideas.models import Board
+
+from django.contrib.auth.models import User
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -12,9 +15,22 @@ def index(request):
     Renders the discussions index page.
     """
     topic_list = Topic.objects.all()
+    user = request.user
+    get_user = get_object_or_404(User, username=user)
+
+    try:
+        board = Board.objects.get(user=get_user, closed=False)
+    except Exception:
+        context = {
+            'topic_list': topic_list,
+        }
+        return render(request, 'discussions/discussion.html', context)
+    
+    board = Board.objects.get(user=get_user, closed=False)
 
     context = {
         'topic_list': topic_list,
+        'board': board,
     }
     return render(request, 'discussions/discussion.html', context)
 
