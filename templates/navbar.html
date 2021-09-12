@@ -12,8 +12,11 @@
         <ul class="navbar-nav ml-auto">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'discussions:index' %}">Discussions</a></li>
-            <li><a href="{% url 'home' %}ideas/board/{{ board }}">Ideas</a></li>
-            
+            {% if board != None %}
+                <li><a href="{% url 'home' %}ideas/board/{{ board }}">Ideas</a></li>
+            {% else %}
+                <li><p class="disabled">Ideas</p></li>
+            {% endif %}
 
             {% if user.is_authenticated %}
                 <li><a href="{% url 'profiles' request.user %}">Profile</a></li>
