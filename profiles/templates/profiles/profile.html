@@ -2,28 +2,47 @@
 {% load static %}
 
 {% block content %}
-<div class="card" style="width: 50%; border: 0em;">
-    <div class="card-body">
-        <h1>Profile</h1>
-
-        <h3>Name: </h3>
-        <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
-        <hr>
-        <h3>Organisation: </h3>
-        <p class="main-text">{{ user_profile.organisation }}</p>
-        <hr>
-        <h3>Job Title: </h3>
-        <p class="main-text">{{ user_profile.job_title }}</p>
-        <hr>
+    <div class="card" style="width: 50%; border: 0em;">
+        <div class="card-body">
+            <h1>Profile <span id="user_id">{{user_profile.id}}</span></h1>
+            <h3>Name: </h3>
+            <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
+            <hr>
+            <h3>Organisation: </h3>
+            <p class="main-text">{{ user_profile.organisation }}</p>
+            <hr>
+            <h3>Job Title: </h3>
+            <p class="main-text">{{ user_profile.job_title }}</p>
+            <hr>
+        </div>
     </div>
-</div>
-{% if request.user.username == user %}
-<br>
+
+    {% if request.user.username == user %}
+        <br>
         <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
         {% if board == none %}
-            Activate a board!
+           
+            <form id="boardForm" class="form mb-2">
+                <div class="text-center">
+                    <label for="id_code"><span class="sr">Please enter an ID code</label>
+                    <input type="text" id="id_code" name="id_code" class="col-5">
+                    <button type="submit" name="action">Create board</button>
+                </div>
+            </form>
+
         {% else %} 
             share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
         {% endif %}
-        {% endif %}
+    {% endif %}
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block page_scripts %}
+  <script type="text/javascript" src="{% static 'js/board.js' %}"></script>
 {% endblock %}
