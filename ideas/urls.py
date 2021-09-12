@@ -11,4 +11,5 @@ urlpatterns = [
     path('list/', views.idea_list, name='idea_list'),
     path('board/<str:pk_board>/', views.board_id, name='board_id'),
     path('create/', views.idea_create, name='idea_create'),
+    path('board_create/', views.board_create, name='board_create'),
 ]
