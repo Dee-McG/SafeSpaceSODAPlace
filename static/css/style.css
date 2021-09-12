@@ -54,8 +54,22 @@ Darkest Blue:
     border: #0E2143 2px solid;
     color: #0E2143;
     background-color: #FF6600;
+}
+
+.soda-link {
+    border: #FF6600 2px solid;
+    color: #0E2143;
+    background-color: transparent;
     padding: 5px;
     margin-top: 10px;
+    border-radius: 4px;
+}
+
+.soda-link:hover {
+    text-decoration: none;
+    border: #FF6600 2px solid;
+    color: #FF6600;
+    background-color: #0E2143;
 }
 
 /* NAVBAR */
@@ -237,6 +251,8 @@ footer a:hover {
 .cont-soda-img {
     max-width: 100%;
 }
+
+
 
 /* DISCUSSION PAGE*/
 
