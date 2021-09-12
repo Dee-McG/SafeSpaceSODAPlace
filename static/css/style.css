@@ -177,7 +177,7 @@ footer a:hover {
 }
 
 .hero-container {
-    background-image: url(/media/hero-img.jpg);
+    background-image: url(/static/img/hero-img.jpg);
     height: calc(100vh - 40px);
     margin-bottom: 40px;
 }
