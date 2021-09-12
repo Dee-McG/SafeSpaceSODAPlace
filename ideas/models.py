@@ -8,7 +8,7 @@ class Board(models.Model):
     A model to open and close
     the idears board.
     """
-    id_code = models.CharField(max_length=15)
+    id_code = models.CharField(max_length=15, primary_key=True, unique=True)
     date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     closed = models.BooleanField(default=False)

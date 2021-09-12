@@ -20,10 +20,10 @@
 {% if request.user.username == user %}
 <br>
         <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
-        {% if board_list == none %}
+        {% if board == none %}
             Activate a board!
         {% else %} 
-            your active board url is: {{ board_list }}
+            share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
         {% endif %}
         {% endif %}
 {% endblock %}
