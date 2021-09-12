@@ -56,7 +56,7 @@ Darkest Blue:
     background-color: #FF6600;
 }
 
-.soda-link {
+.soda-link, .error-btn {
     border: #FF6600 2px solid;
     color: #0E2143;
     background-color: transparent;
@@ -65,7 +65,7 @@ Darkest Blue:
     border-radius: 4px;
 }
 
-.soda-link:hover {
+.soda-link:hover, .error-btn:hover {
     text-decoration: none;
     border: #FF6600 2px solid;
     color: #FF6600;
@@ -252,7 +252,13 @@ footer a:hover {
     max-width: 100%;
 }
 
+/* ERROR PAGES */
 
+.error-container {
+    margin: 0;
+    padding-top: 30px;
+    text-align: center;
+}
 
 /* DISCUSSION PAGE*/
 

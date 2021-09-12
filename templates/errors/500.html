@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% content block %}
+
+<div class="error-container">
+    <h1>Oops, An Error Occurred</h1>
+    <p>Something's not quite right.<br>Use one of the buttons below to get yourself back on track.</p>
+    <div>
+        <a class="error-btn" href="{% url 'home'%}">Home</a>
+        <a class="error-btn" href="{% url 'profiles' request.user %}">Profile</a>
+    </div>
+</div>
+
+{% endblock %}
