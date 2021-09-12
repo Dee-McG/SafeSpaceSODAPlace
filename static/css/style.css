@@ -285,10 +285,6 @@ footer a:hover {
     color: #FF6600
 }
 
-#profile-text {
-    justify-content: center;
-}
-
 .card-body>h1 {
     margin: 1rem 0;
 }
@@ -301,6 +297,19 @@ footer a:hover {
 .card-body>p {
     margin: 0;
     padding-left: 0;
+}
+
+.activate-board-btn {
+    background-color: #0E2143;
+    color: #FFFFC2;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+}
+
+.activate-board-btn:hover {
+    background-color: #FF6600;
+    color: #0E2143;
 }
 
 /*Edit Profile*/
