@@ -41,26 +41,20 @@ class IdeaSummaryView(LoginRequiredMixin, View):
             return redirect('profiles.html')
 
 
-
-
-
-
 def board_id(request, pk_board):
     """
     the selected board in the database.
     """
     board = Board.objects.get(id_code=pk_board)
     ideas = Idea.objects.filter(board=pk_board)
+    current_user = request.user
 
     context = {
         'board': board,
-        'ideas': ideas
+        'ideas': ideas,
+        'current_user': current_user,
     }
     return render(request, 'ideas/board.html', context)
-
-
-
-
 
 
 @api_view(['GET'])

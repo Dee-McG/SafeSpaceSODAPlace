@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 <div class="card" style="width: 50%; border: 0em;">
     <div class="card-body">
         <h1>Profile</h1>
-
-        <h3>Name: </h3>
+        <h5>Name: </h5>
         <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
         <hr>
-        <h3>Organisation: </h3>
+        <h5>Organisation: </h5>
         <p class="main-text">{{ user_profile.organisation }}</p>
         <hr>
-        <h3>Job Title: </h3>
+        <h5>Job Title: </h5>
         <p class="main-text">{{ user_profile.job_title }}</p>
         <hr>
     </div>
 </div>
 {% if request.user.username == user %}
 <br>
-        <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
-        {% if board == none %}
-            Activate a board!
-        {% else %} 
-            share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
-        {% endif %}
-        {% endif %}
+<div class="container" style="margin: 0;">
+    <a class="activate-board-btn" href="">Activate a board!</a>
+    <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
+    {% if board == none %}
+
+    {% else %}
+    share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
+    {% endif %}
+    {% endif %}
+</div>
 {% endblock %}
