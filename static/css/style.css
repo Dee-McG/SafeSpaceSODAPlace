@@ -114,17 +114,21 @@ footer a:hover {
 
 /* INDEX.HTML */
 
+.container-fluid {
+    overflow: hidden;
+}
+
 .hero-container {
     background-image: url(/media/hero-img.jpg);
-    height: calc(100vh - 56px);
+    height: calc(100vh - 40px);
     margin-bottom: 40px;
 }
 
 .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
-    height: calc(100vh - 56px);
-    width: 100vw;
+    height: calc(100vh - 40px);
+    width: 100%;
 }
 
 .hero-content {
@@ -132,10 +136,11 @@ footer a:hover {
     position: relative;
     color: #FF6600;
     width: 100vw;
+    margin: 0;
 }
 
 .inner-cont {
-    margin-top: 30vh;
+    margin-top: 20vh;
     padding: 0 10px;
 }
 
@@ -144,12 +149,14 @@ footer a:hover {
     font-size: 4.5rem;
     text-shadow:
         0 0 21px #FF6600,
-        0 0 72px #FF6600;
+        0 0 48px #FF6600;
     font-weight: 300;
+    margin-bottom: 20px;
 }
 
 .hero-content h2 {
     font-weight: 300;
+    color: #FFC933;
 }
 
 .home-content h3 {
@@ -320,9 +327,22 @@ footer a:hover {
     color: #0E2143;
 }
 
-/* Ideas page */
+/* MEDIA QUERIES */
 @media only screen and (min-width: 800px) {
     .ideas {
       padding: 0 10% 0 10%;
     }
   }
+
+
+@media only screen and (max-width: 560px) {
+    .inner-cont h1 {
+        font-size: 13vw;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .inner-cont h2 {
+        font-size: 8vw;
+    }
+}

@@ -19,7 +19,6 @@ class IdeaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Idea
         fields = (
-            
             'user',
             'closed',
             'idea_message',

@@ -28,4 +28,11 @@
     <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
 </div>
 {% endif %}
+      <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
+      {% if board == none %}
+          Activate a board!
+      {% else %} 
+          share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
+      {% endif %}
+      {% endif %}
 {% endblock %}
