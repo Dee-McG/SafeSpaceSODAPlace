@@ -20,7 +20,7 @@
 {% if request.user.username == user %}
 <br>
 <div class="container-fluid">
-    <a class="activate-board m-4" href="{% if board_list == none %}">Activate a board!</a>
+    <a class="activate-board" href="{% if board_list == none %}">Activate a board!</a>
 
     {% else %}
     your active board url is: {{ board_list }}
