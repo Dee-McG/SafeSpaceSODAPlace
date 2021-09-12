@@ -3,27 +3,30 @@
 
 {% block content %}
 
-<h1 style="color:blue;" class="text-center">Ideas</h1>
+<h1 style="color:blue;" class="text-center">Ideas board: <span id="board_id">{{ board }}</span></h1>
 
 <div class="row no-gutters">
     <div class="col-12">
         <!-- Idea container -->
         <div>
-            {% for idea in object.items.all %}
+            {% for idea in ideas %}
                 <p style="color:blue;">
                 {{ idea.idea_message }}
             {% endfor %}
         </div>
         <!-- Form to submit new idea -->
-        <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
-            {% csrf_token %}
+        <form id="ideaForm" class="form mb-2">
             <div class="text-center">
                 <label for="idea_message"><span class="sr-only">Please enter a message</span></label>
                 <input type="text" id="idea_message" name="idea_message" class="col-5">
-                <button type="submit">Send</button>
+                <button class="btn waves-effect waves-light light-blue lighten-2" type="submit" name="action">Sending</button>
             </div>
         </form>
     </div>
 </div>
 
+{% endblock %}
+
+{% block page_scripts %}
+  <script type="text/javascript" src="{% static 'js/ideas.js' %}"></script>
 {% endblock %}
