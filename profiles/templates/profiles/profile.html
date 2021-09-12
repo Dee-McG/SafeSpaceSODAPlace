@@ -23,19 +23,19 @@
 
     {% if request.user.username == user %}
         <br>
-        <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile >></a>
+        <a class="edit-profile" href="{% url 'edit_profile' request.user.username %}">Edit Profile</a>
         {% if board == none %}
            
             <form id="boardForm" class="form mb-2">
                 <div class="text-center">
-                    <label for="id_code"><span class="sr">Please enter an ID code</label>
+                    <label for="id_code" class="share-board">Please enter an ID code</label>
                     <input type="text" id="id_code" name="id_code" class="col-5">
                     <button type="submit" name="action">Create board</button>
                 </div>
             </form>
 
         {% else %} 
-            share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}">Board link</a>
+            <p class="share-board">Share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}" class="board-link">Board link</a></p>
         {% endif %}
     {% endif %}
 

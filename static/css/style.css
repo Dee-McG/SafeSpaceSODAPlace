@@ -415,6 +415,16 @@ footer a:hover {
     text-decoration: none;
 }
 
+.share-board {
+    font-size: 140%;
+    padding-left: 1.5rem;
+}
+
+.board-link:hover {
+    color: #FF6600;
+    text-decoration: none;
+}
+
 /*Edit Profile*/
 
 .edit-profile-btn {
