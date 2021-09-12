@@ -99,6 +99,10 @@ Darkest Blue:
     padding: 4px 12px;
 }
 
+.disabled {
+    color: #cccc2e;
+}
+
 /* FOOTER */
 
 footer {
