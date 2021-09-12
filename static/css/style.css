@@ -325,6 +325,16 @@ footer a:hover {
     color: #0E2143;
 }
 
+.board-link {
+    color: #0E2143;
+    padding-left: 10px;
+}
+
+.board-link:hover {
+    color: #FF6600;
+    text-decoration: none;
+}
+
 /*Edit Profile*/
 
 .edit-profile-btn {
@@ -359,3 +369,9 @@ footer a:hover {
         font-size: 8vw;
     }
 }
+
+@media only screen and (max-width: 360px) {
+    .profile-container {
+        width: 100%;
+    }
+}    
