@@ -7,7 +7,7 @@
         <h1>Profile</h1>
 
         <h5>Name: </h5>
-        <p class="main-text" id="profile-text">{{ user_profile.name }}</p>
+        <p class="main-text">{{ user_profile.name }}</p>
         <hr>
         <h5>Organisation: </h5>
         <p class="main-text">{{ user_profile.organisation }}</p>
@@ -20,7 +20,7 @@
 {% if request.user.username == user %}
 <br>
 <div class="container-fluid">
-    <a class="activate-board" href="{% if board_list == none %}">Activate a board!</a>
+    <a class="activate-board-btn" href="{% if board_list == none %}">Activate a board!</a>
 
     {% else %}
     your active board url is: {{ board_list }}
