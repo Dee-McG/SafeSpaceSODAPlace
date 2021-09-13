@@ -363,6 +363,10 @@ footer a:hover {
 
 /*profile*/
 
+.profile-container h2 {
+    font-size: 1.5rem;
+}
+
 .edit-profile {
     font-size: 140%;
     padding-left: 1.5rem;
@@ -419,6 +423,19 @@ footer a:hover {
     color: #FF6600;
     text-decoration: none;
 }
+
+.create-board-btn {
+    background-color: #0E2143;
+    color: #FFFFC2;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.create-board-btn:hover {
+    background-color: #FF6600;
+    color: #0E2143;
+}
+
 
 /*Edit Profile*/
 
