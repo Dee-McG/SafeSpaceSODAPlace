@@ -9,8 +9,7 @@
   <h1 id="title">Discussion Board</h1>
 </header>
 
-<main>
-  <div id="container">
+<div id="container">
     
     <!-- First Topic board-->
     {% for topic in topic_list reversed %}
@@ -39,7 +38,7 @@
         <button class="btn" onclick="showComments({{ topic.id }});">Add Comment</button>
 
         <div class="comment-container" id="comments-{{ topic.id }}" hidden>
-          <label for="user-comment">Enter your comment here:</label>
+          <label for="user-comment-{{ topic.id }}">Enter your comment here:</label>
           <br>
 
           <form id="commentForm" class="form mb-2">
@@ -55,7 +54,7 @@
       <hr>
     {% endfor %}
         </div>
-    </main>
+
 
 {% endblock %}
 
