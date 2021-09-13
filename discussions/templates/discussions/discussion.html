@@ -44,7 +44,7 @@
 
           <form id="commentForm" class="form mb-2">
             <div class="text-center">
-                <textarea id="user-comment" name="user-comment" placeholder="Comment here...." rows="4" cols="50"></textarea>
+                <textarea id="user-comment-{{ topic.id }}" name="user-comment" placeholder="Comment here...." rows="4" cols="50"></textarea>
                 <br>
                 <a class="comment-submit btn" onclick="sendComment('{{topic.id}}')">Submit comment</a>
             </div>
