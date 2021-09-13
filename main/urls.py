@@ -25,7 +25,7 @@ urlpatterns = [
     path('discussions/', include('discussions.urls', namespace='discussions')),
     path('ideas/', include('ideas.urls', namespace='ideas')),
     path('profiles/', include('profiles.urls')),
-]
+] + settings.STATIC_URL, document_root=settings.STATIC_ROOT
 
 
 if settings.DEBUG:
