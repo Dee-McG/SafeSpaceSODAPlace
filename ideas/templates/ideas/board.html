@@ -5,14 +5,14 @@
 
 {% block content %}
 
-<h1 style="color:blue;" class="text-center">Ideas board: <span id="board_id">{{ board }}</span><span id="user_id">{{current_user.id}}</span></h1>
+<h1 class="text-center">Ideas board: <span id="board_id">{{ board }}</span><span id="user_id">{{current_user.id}}</span></h1>
 
 <div class="row no-gutters">
     <div class="col-12">
         <!-- Idea container -->
-        <div>
+        <div class="ideas">
             {% for idea in ideas %}
-                <p style="color:blue;">
+                <p>
                 {% if idea.closed == False %}
                     {{ idea.idea_message }}
                 {% endif %}
@@ -22,7 +22,7 @@
         </div>
         <!-- Form to submit new idea -->
         <form id="ideaForm" class="form mb-2">
-            <div class="text-center">
+            <div class="text-center input-container">
                 <label for="idea_message"><span class="sr-only">Please enter a message</span></label>
                 <input type="text" id="idea_message" name="idea_message" class="col-5">
                 <button class="btn btn-outline-secondary" type="submit" name="action">Send idea</button>
