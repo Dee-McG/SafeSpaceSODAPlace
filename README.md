@@ -66,6 +66,17 @@ Home Page displayed
 **Actual:**<br>
 Home Page displayed
 
+### Testing performed on nav bars to ensure they redirect to the correct pages
+
+* Step 1 - Navigate to [Home Page](https://safe-space-soda-place.herokuapp.com)
+* Step 2 - Click on nav item and ensure it navigates to the correct page
+
+**Expected:**<br>
+All links navigate to the correct pages
+
+**Actual:**<br>
+All links navigate to the correct pages
+
 ### Testing performed on authentication to ensure users can sign up
 
 * Step 1 - Navigate to [Sign up Page](https://safe-space-soda-place.herokuapp.com/accounts/login/)
