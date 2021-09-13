@@ -10,7 +10,6 @@
             <img src="{% static 'img/ss-full-logo.png' %}" height="68px" alt="SafeSpace Logo">
         </a>
         <ul class="navbar-nav ml-auto">
-            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'discussions:index' %}">Discussions</a></li>
             {% if board != None %}
                 <li><a href="{% url 'home' %}ideas/board/{{ board }}">Ideas</a></li>
