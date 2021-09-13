@@ -1,19 +1,5 @@
 from rest_framework import serializers
-from .models import Topic, Comment
-
-
-class TopicSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Topic
-        fields = (
-            'title',
-            'description',
-            'placed',
-            'datetime',
-            'voting',
-        )
-        depth = 1
+from .models import Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -23,4 +9,5 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = (
             'topic',
             'content',
+            'user'
         )
