@@ -6,12 +6,18 @@ Users will be able to draw attention to their own needs that may not be being me
 
 You can find the live site [here](https://safe-space-soda-place.herokuapp.com/).
 
+---
+
 ## Wireframes
 [Click here for the desktop wireframe](static/img/readme/full-wireframes.png)
+
+---
 
 ## Flow
 
 ![Site flow chart](static/img/readme/hackathon-flow.png)
+
+---
 
 ## Features
 - Nav bar that updates depending on user authentication
@@ -53,6 +59,8 @@ You can find the live site [here](https://safe-space-soda-place.herokuapp.com/).
 ![discuss idea](static/img/readme/features/07-discuss-idea.PNG)
 
 ![comment on idea](static/img/readme/features/07-comment-on-idea.PNG)
+
+---
 
 ## Testing
 
@@ -158,7 +166,37 @@ Comment added under correct discussion item
 **Actual:**<br>
 Comment added under correct discussion item
 
+### Accessibility Testing
+
+The site was throughly checked for any possible accessibility issues. Below is the [WAVE](https://wave.webaim.org/) report:
+
+![Wave report](static/img/readme/accessibility-testing.PNG)
+
+The only isses is that there is a 'home' link on the navbar and the logo serves the same purpose. However, some people don't intuitively know to click the logo to go back home so we felt this was a necessary feature. 
+
+### Validator Testing
+
+All pages were ckecd using a [HTML validator](https://validator.w3.org/).
+
+The CSS file was checked using a [CSS validator](https://jigsaw.w3.org/css-validator/).
+
+---
+
 ## Technologies Used
+
++ [HTML5](https://en.wikipedia.org/wiki/HTML5)
++ [CSS3](https://en.wikipedia.org/wiki/CSS)
++ [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
++ [Python3](https://www.python.org/)
++ [Django](https://www.djangoproject.com/)
++ [Pip3](https://pip.pypa.io/en/stable/)
++ [FontAwesome](https://fontawesome.com/)
++ [Google Fonts](https://fonts.google.com/) 
++ [Heroku](https://www.heroku.com/) used to deploy live site
++ [GitHub](https://github.com/) used to host repository.
++ [GitPod](https://www.gitpod.io/) used to develop project and organise version 
+
+---
 
 ## Contributors
 
