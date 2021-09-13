@@ -18,20 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('discussions/', include('discussions.urls', namespace='discussions')),
     path('ideas/', include('ideas.urls', namespace='ideas')),
-    path('profiles/', include('profiles.urls')),
-] + settings.STATIC_URL, document_root=settings.STATIC_ROOT
-
-
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.STATIC_URL, document_root=settings.STATIC_ROOT
-    )
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )
+    path('profiles/', include('profiles.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
