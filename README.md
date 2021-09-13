@@ -56,6 +56,97 @@ You can find the live site [here](https://safe-space-soda-place.herokuapp.com/).
 
 ## Testing
 
+### Testing performed on ensure home page renders
+
+* Step 1 - Navigate to [Home Page](https://safe-space-soda-place.herokuapp.com)
+
+**Expected:**<br>
+Home Page displayed
+
+**Actual:**<br>
+Home Page displayed
+
+### Testing performed on authentication to ensure users can sign up
+
+* Step 1 - Navigate to [Sign up Page](https://safe-space-soda-place.herokuapp.com/accounts/login/)
+* Step 2 - Fill in email, username and password fields
+* Step 3 - Submit form
+
+**Expected:**<br>
+User can sign in with new details
+
+**Actual:**<br>
+User can sign in with new details
+
+### Testing performed on profile page works as expected
+
+* Step 1 - Navigate to [Profile Page](https://safe-space-soda-place.herokuapp.com/profile/username/)
+
+**Expected:**<br>
+Profile Page displayed
+
+**Actual:**<br>
+Profile Page displayed
+
+### Testing performed on edit profile page works as expected
+
+* Step 1 - Navigate to [Profile Page](https://safe-space-soda-place.herokuapp.com/profile/username/)
+* Step 2 - Click edit profile
+* Step 3 - Fill in edit profile form and submit
+
+**Expected:**<br>
+Profile is updated and user is redirected to their profile
+
+**Actual:**<br>
+Profile is updated and user is redirected to their profile
+
+### Testing performed on board creation
+
+* Step 1 - Navigate to [Profile Page](https://safe-space-soda-place.herokuapp.com/profile/username/)
+* Step 2 - Enter details into board creation input
+* Step 3 - Click create board
+
+**Expected:**<br>
+Ideas board is created
+
+**Actual:**<br>
+Ideas board is created
+
+### Testing performed on idea submission
+
+* Step 1 - Navigate to [Ideas Page](https://safe-space-soda-place.herokuapp.com/ideas/board/board_no/)
+* Step 2 - Fill in form to add an idea and submit
+
+**Expected:**<br>
+Ideas added to board
+
+**Actual:**<br>
+Ideas added to board
+
+### Testing performed on discussion creation
+
+* Step 1 - Navigate to [Ideas Page](https://safe-space-soda-place.herokuapp.com/ideas/board/board_no/)
+* Step 2 - Click start discussion
+* Step 3 - Click the discussions page nav link
+
+**Expected:**<br>
+Discussion board populated with ideas
+
+**Actual:**<br>
+Discussion board populated with ideas
+
+### Testing performed on discussion comment creation
+
+* Step 1 - Navigate to [Discussion Page](https://safe-space-soda-place.herokuapp.com/discussion/)
+* Step 2 - Click the comment button to display the comment input box
+* Step 3 - Add a comment into the input box and then click submit comment button
+
+**Expected:**<br>
+Comment added under correct discussion item
+
+**Actual:**<br>
+Comment added under correct discussion item
+
 ## Technologies Used
 
 ## Contributors
