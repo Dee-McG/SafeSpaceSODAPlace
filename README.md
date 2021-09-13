@@ -6,6 +6,18 @@ Users will be able to draw attention to their own needs that may not be being me
 
 You can find the live site [here](https://safe-space-soda-place.herokuapp.com/).
 
+---
+
+## Contents
++ [Wireframes](#wireframes)
++ [Features](#features)
++ [Database](#database)
++ [Technologies Used](#technologies-used)
++ [Testing](#testing)
++ [Contributors](#contributors)
+
+---
+
 ## Wireframes
 [Click here for the desktop wireframe](static/img/readme/full-wireframes.png)
 
@@ -54,9 +66,17 @@ You can find the live site [here](https://safe-space-soda-place.herokuapp.com/).
 
 ![comment on idea](static/img/readme/features/07-comment-on-idea.PNG)
 
+---
+
 ## Testing
 
+### Validator Testing
+
+---
+
 ## Technologies Used
+
+---
 
 ## Contributors
 
