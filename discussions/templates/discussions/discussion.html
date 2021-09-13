@@ -28,10 +28,12 @@
         <div class="comments-made">
           {% if comments %}
             {% for comment in comments %}
-                <p>{{ comment }}</p>
+              {% if comment.topic|slugify == topic.title|slugify %}
+                <p>{{ comment.content }}</p>
+              {% endif %}
             {% endfor %}
           {% else %}
-            <p>Give verbal as well as written instructions (this also applies to using voicemail rather than, or as well as, written memos)</p>
+          <p>Give verbal as well as written instructions (this also applies to using voicemail rather than, or as well as, written memos)</p>
           {% endif %}
         </div>
         <button class="btn" onclick="showComments({{ topic.id }});">Add Comment</button>
