@@ -41,11 +41,6 @@ function sendComment(id) {
         let comment = document.getElementById('user-comment-'+id).value;
         let user = document.getElementById('get_id').innerHTML;
 
-        console.log(id);
-        console.log(comment);
-        console.log(user);
-
-
         fetch(url, {
             method: 'POST',
             headers: {
