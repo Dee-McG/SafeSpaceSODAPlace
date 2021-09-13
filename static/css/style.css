@@ -212,8 +212,10 @@ footer a:hover {
 
 .inner-cont {
     margin-top: 20vh;
-    padding: 0 10px;
+    padding: 0 0 12px 0;
     text-align: center;
+    background-color: rgba(14, 33, 67, 0.9);
+    box-shadow: 0 0 10px 15px rgba(14, 33, 67, 0.9);
 }
 
 .inner-cont h2 {
@@ -223,9 +225,7 @@ footer a:hover {
 .hero-content h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 4.5rem;
-    text-shadow:
-        0 0 21px #FF6600,
-        0 0 48px #FF6600;
+    text-shadow: 0 0 21px #FF6600;
     font-weight: 300;
 }
 
@@ -250,11 +250,6 @@ footer a:hover {
 
 .content-row {
     margin: 10px 0 50px 0;
-}
-
-.content-row p {
-    text-align: justify;
-    text-justify: inter-character;
 }
 
 .cont-img {
@@ -368,6 +363,10 @@ footer a:hover {
 
 /*profile*/
 
+.profile-container h2 {
+    font-size: 1.5rem;
+}
+
 .edit-profile {
     font-size: 140%;
     padding-left: 1.5rem;
@@ -424,6 +423,19 @@ footer a:hover {
     color: #FF6600;
     text-decoration: none;
 }
+
+.create-board-btn {
+    background-color: #0E2143;
+    color: #FFFFC2;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.create-board-btn:hover {
+    background-color: #FF6600;
+    color: #0E2143;
+}
+
 
 /*Edit Profile*/
 
