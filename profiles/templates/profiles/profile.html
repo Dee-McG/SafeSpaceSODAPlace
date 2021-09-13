@@ -38,10 +38,10 @@
     <p class="share-board">Share your board url: <a href="{% url 'home' %}ideas/board/{{ board }}"
             class="board-link">Board link</a></p>
     {% endif %}
+</div>
 
+{% endblock %}
 
-    {% endblock %}
-
-    {% block page_scripts %}
+{% block page_scripts %}
     <script type="text/javascript" src="{% static 'js/board.js' %}"></script>
-    {% endblock %}
+{% endblock %}
