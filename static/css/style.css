@@ -340,8 +340,9 @@ footer a:hover {
     text-align: center;
 }
 
-#user-comment {
+textarea[id^="user-comment"] {
     width: 80%;
+    max-width: 100%;
     margin: 20px;
 }
 
@@ -463,6 +464,11 @@ footer a:hover {
 @media only screen and (max-width: 560px) {
     .inner-cont h1 {
         font-size: 13vw;
+    }
+    textarea[id^="user-comment"] {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
 }
 
