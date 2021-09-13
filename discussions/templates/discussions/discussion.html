@@ -15,7 +15,7 @@
     <!-- First Topic board-->
     {% for topic in topic_list reversed %}
 
-      <div class="topic-container">
+      <div class="topic-container" id="{{ topic.id }}">
         <div class="topic-main">
           <span class="topic">{{ topic.title }}</span>
         </div>
@@ -26,21 +26,30 @@
         <h2>Comments:</h2>
         
         <div class="comments-made">
-                    <p>Give verbal as well as written instructions (this also applies to using voicemail rather than, or as well as, written memos)</p>
-                </div>
-                <button class="btn">Comment</button>
-           </div>
-           <div class="comment-container hide">
-               <label for="user-comment">Enter your comment here:</label>
-               <br>
-               <textarea id="user-comment" name="user-comment" placeholder="Comment here...." rows="4" cols="50">
+          {% if comments %}
+            {% for comment in comments %}
+              {% if comment.topic|slugify == topic.title|slugify %}
+                <p>{{ comment.content }}</p>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+          <p>Give verbal as well as written instructions (this also applies to using voicemail rather than, or as well as, written memos)</p>
+          {% endif %}
+        </div>
+        <button class="btn" onclick="showComments({{ topic.id }});">Add Comment</button>
 
-               </textarea>
-               <br>
-               <button class="comment-submit btn">Submit Comment</button>
-           </div>
-           {% endfor %}
+        <div class="comment-container" id="comments-{{ topic.id }}" hidden>
+          <label for="user-comment">Enter your comment here:</label>
+          <br>
+          <textarea id="user-comment" name="user-comment" placeholder="Comment here...." rows="4" cols="50">
 
+          </textarea>
+          <br>
+          <button class="comment-submit btn">Submit Comment</button>
+        </div>
+      </div>
+      <hr>
+    {% endfor %}
         </div>
     </main>
 

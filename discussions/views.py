@@ -29,10 +29,12 @@ def index(request):
     board = Board.objects.get(user=get_user, closed=False)
     user = request.user
     get_user = get_object_or_404(User, username=user)
+    comments = Comment.objects.all()
 
     context = {
         'topic_list': topic_list,
         'board': board,
+        'comments': comments,
     }
     return render(request, 'discussions/discussion.html', context)
 

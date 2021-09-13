@@ -15,6 +15,8 @@ def profiles(request, user):
     if not request.user.is_authenticated:
         return redirect(reverse('home'))
 
+    user = request.user
+
     context = {
         'user': user,
     }
